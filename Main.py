@@ -47,15 +47,17 @@ async def on_message_delete(self, message):
         await message.channel.send(msg)
 
 @client.event #member bergabung
-async def on_member_join(client.user, member):
+async def on_member_join(client, member):
         guild = member.guild
         if guild.system_channel is not None:
             to_send = f'welcome {member.mention} to {guild.name}!'
             await guild.system_channel.send(to_send)
 
 @client.event #member keluar
-async def on_member_remove(client.user, member):
+async def on_member_remove(client, member):
         guild = member.guild
         if guild.system_channel is not None:
             to_send = f'Sayonara {member.mention} !'
             await guild.system_channel.send(to_send)
+
+client.run("MTE1ODM4NjM3NTQ5MDUzOTU4MQ.GKtngk.FH6F3DMpZ4fbaq6iYpD-uOo16UYUykh_FWUZNA")
